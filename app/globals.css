@@ -21,50 +21,20 @@ body {
 body {
   font-family: var(--font-display), sans-serif;
   color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   background:
-    radial-gradient(circle at 10% -2%, rgba(245, 191, 146, 0.42) 0%, transparent 28%),
-    radial-gradient(circle at 90% 24%, rgba(184, 226, 219, 0.42) 0%, transparent 30%),
-    linear-gradient(180deg, #f8f2e9 0%, #f5ede2 52%, #f7f1e8 100%);
+    radial-gradient(circle at 8% 0%, rgba(244, 188, 136, 0.28) 0%, transparent 30%),
+    radial-gradient(circle at 94% 22%, rgba(170, 216, 208, 0.25) 0%, transparent 34%),
+    linear-gradient(180deg, #f9f4ed 0%, #f7f1e8 42%, #f5ede2 100%);
 }
 
 .page {
   position: relative;
-  overflow: hidden;
   width: min(1120px, 92vw);
   margin: 0 auto;
-  padding: 24px 0 120px;
-}
-
-.ambient {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(62px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.ambient-a {
-  width: 260px;
-  height: 260px;
-  background: rgba(244, 148, 72, 0.2);
-  top: -90px;
-  left: -96px;
-}
-
-.ambient-b {
-  width: 320px;
-  height: 320px;
-  background: rgba(77, 177, 166, 0.17);
-  right: -124px;
-  top: 280px;
-}
-
-.ambient-c {
-  width: 290px;
-  height: 290px;
-  background: rgba(247, 197, 134, 0.16);
-  left: 38%;
-  bottom: -120px;
+  padding: 26px 0 120px;
 }
 
 .topbar,
@@ -85,6 +55,7 @@ body {
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 250, 243, 0.92);
+  backdrop-filter: blur(3px);
 }
 
 .brand-lockup {
@@ -96,9 +67,10 @@ body {
 }
 
 .top-badge {
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-display), sans-serif;
   font-size: 0.74rem;
-  letter-spacing: 0.11em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -120,32 +92,35 @@ body {
 
 .eyebrow {
   margin: 0;
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-display), sans-serif;
   font-size: 0.76rem;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .coming {
   margin: 10px 0 0;
-  font-size: 1.12rem;
-  font-weight: 700;
+  font-size: 1.08rem;
+  font-weight: 600;
 }
 
 .hero h1 {
   margin: 12px 0 16px;
   max-width: 11.8ch;
   font-size: clamp(2.4rem, 6vw, 4.6rem);
-  line-height: 1.03;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
   margin: 0;
   max-width: 54ch;
   color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.75;
+  font-size: 1.12rem;
+  line-height: 1.8;
 }
 
 .hero-actions {
@@ -160,7 +135,7 @@ body {
   border-radius: 999px;
   padding: 12px 20px;
   text-decoration: none;
-  font-weight: 650;
+  font-weight: 600;
   transition: transform 140ms ease;
 }
 
@@ -188,7 +163,7 @@ body {
 
 .gradient-card {
   background:
-    linear-gradient(160deg, rgba(255, 247, 234, 0.9) 0%, rgba(255, 236, 213, 0.7) 52%, rgba(229, 244, 241, 0.65) 100%),
+    linear-gradient(155deg, rgba(255, 250, 242, 0.92) 0%, rgba(247, 239, 228, 0.9) 58%, rgba(240, 248, 246, 0.82) 100%),
     #fffaf3;
 }
 
@@ -237,7 +212,7 @@ body {
   gap: 12px;
   margin-bottom: 16px;
   background:
-    linear-gradient(100deg, rgba(228, 244, 240, 0.55) 0%, rgba(255, 232, 206, 0.55) 52%, rgba(255, 245, 230, 0.6) 100%),
+    linear-gradient(100deg, rgba(235, 247, 244, 0.46) 0%, rgba(255, 242, 226, 0.5) 55%, rgba(255, 249, 239, 0.56) 100%),
     var(--panel);
 }
 
@@ -246,9 +221,9 @@ body {
   padding: 13px 14px;
   border-radius: 12px;
   border: 1px solid #e5d7c6;
-  background: rgba(255, 252, 247, 0.8);
+  background: rgba(255, 252, 247, 0.9);
   text-align: center;
-  font-weight: 600;
+  font-weight: 550;
   color: #574738;
 }
 
@@ -266,6 +241,7 @@ body {
 .signup h2 {
   margin: 0;
   font-size: clamp(1.65rem, 3vw, 2.15rem);
+  letter-spacing: -0.01em;
 }
 
 .story p {
@@ -306,9 +282,10 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 14px;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   color: #8e7f6f;
   background: rgba(255, 236, 210, 0.75);
   border: 1px solid #ebd9c2;
@@ -316,7 +293,8 @@ body {
 
 .step-row h3 {
   margin: 2px 0 8px;
-  font-size: 1.13rem;
+  font-size: 1.17rem;
+  font-weight: 650;
 }
 
 .step-row p {
@@ -336,7 +314,7 @@ body {
   border-radius: 18px;
   padding: 24px;
   background:
-    linear-gradient(145deg, rgba(255, 248, 236, 0.8) 0%, rgba(255, 254, 250, 0.9) 100%),
+    linear-gradient(145deg, rgba(255, 250, 242, 0.85) 0%, rgba(255, 254, 250, 0.92) 100%),
     #fff;
 }
 
@@ -369,9 +347,10 @@ label {
 }
 
 label span {
-  font-family: var(--font-mono), monospace;
-  font-size: 0.79rem;
-  letter-spacing: 0.03em;
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   color: #776a5f;
 }
 
@@ -410,8 +389,9 @@ button:disabled {
 
 .status {
   margin: 12px 0 0;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.86rem;
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .status.success {
@@ -425,14 +405,14 @@ button:disabled {
 .closing-gradient {
   text-align: center;
   background:
-    linear-gradient(122deg, rgba(11, 133, 121, 0.86) 0%, rgba(37, 147, 136, 0.82) 38%, rgba(239, 124, 39, 0.86) 100%),
-    #1e675f;
+    linear-gradient(118deg, rgba(210, 238, 231, 0.82) 0%, rgba(249, 233, 210, 0.86) 54%, rgba(253, 216, 185, 0.88) 100%),
+    #f6eee3;
   border-color: rgba(219, 197, 170, 0.8);
 }
 
 .closing-gradient p {
   margin: 0;
-  color: #fff7ec;
+  color: #3c342b;
   font-size: clamp(1.18rem, 3vw, 1.5rem);
   font-weight: 600;
   letter-spacing: 0.01em;

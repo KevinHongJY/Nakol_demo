@@ -80,10 +80,6 @@ export default function Home() {
 
   return (
     <main className="page">
-      <div className="ambient ambient-a" aria-hidden />
-      <div className="ambient ambient-b" aria-hidden />
-      <div className="ambient ambient-c" aria-hidden />
-
       <header className="topbar">
         <div className="brand-lockup">
           <Image src="/nakol-mark.svg" alt="Nakol icon" width={34} height={34} priority />
