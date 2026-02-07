@@ -1,12 +1,18 @@
-<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="64" cy="64" r="56" fill="#E9722E"/>
-  <g stroke="#FFF4E8" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M38 40V56"/>
-    <path d="M46 40V56"/>
-    <path d="M54 40V56"/>
-    <path d="M46 56V86"/>
-    <path d="M72 40C67 40 63 44 63 49C63 55 67 58 72 61L72 86"/>
-    <path d="M84 40V86"/>
-    <path d="M72 61C78 60 82 55 84 49"/>
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nakolBg" x1="44" y1="32" x2="216" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F07F3A"/>
+      <stop offset="1" stop-color="#DD6224"/>
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="112" fill="url(#nakolBg)"/>
+  <g stroke="#FFF8EE" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M78 72V112"/>
+    <path d="M96 72V112"/>
+    <path d="M114 72V112"/>
+    <path d="M96 112V180"/>
+    <path d="M146 74V116C146 132 158 138 174 146"/>
+    <path d="M174 74V180"/>
+    <path d="M146 116C160 114 170 106 174 92"/>
   </g>
 </svg>
