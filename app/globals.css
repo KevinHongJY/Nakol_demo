@@ -45,6 +45,13 @@ body {
   letter-spacing: 0.18em;
   color: var(--muted);
   font-size: 12px;
+  margin: 0;
+}
+
+.coming {
+  margin: 8px 0 4px;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 h1 {
@@ -77,11 +84,66 @@ h1 {
 }
 
 .card h2 {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 1.22rem;
 }
 
 .card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.story {
+  border-radius: 22px;
+  padding: 22px;
+  background: #fff8ef;
+  border: 1px solid #e8d6bd;
+  margin-bottom: 18px;
+}
+
+.story h2 {
+  margin: 0 0 10px;
+}
+
+.story p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.steps {
+  margin-bottom: 20px;
+}
+
+.steps h2 {
+  margin: 0 0 6px;
+}
+
+.steps-subtitle {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.step-card {
+  background: #fff9f2;
+  border: 1px solid #ead9c3;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.step-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.step-card p {
   margin: 0;
   color: var(--muted);
   line-height: 1.5;
@@ -100,10 +162,26 @@ h1 {
   margin: 0 0 14px;
 }
 
+.signup-subtitle {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
 .form {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr;
   gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+}
+
+label span {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
 input,
@@ -146,6 +224,12 @@ button:disabled {
   color: #b91c1c;
 }
 
+.brand-footer {
+  margin: 16px 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -159,6 +243,10 @@ button:disabled {
 
 @media (max-width: 860px) {
   .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-grid {
     grid-template-columns: 1fr;
   }
 

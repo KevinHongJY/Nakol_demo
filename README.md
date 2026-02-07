@@ -51,7 +51,8 @@ Request body:
 ```json
 {
   "name": "Jane Doe",
-  "email": "jane@example.com"
+  "email": "jane@example.com",
+  "phone": "+1 (555) 000-0000"
 }
 ```
 

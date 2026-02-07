@@ -6,22 +6,24 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export async function POST(request: Request) {
   try {
     const supabaseAdmin = getSupabaseAdmin();
-    const { name, email } = await request.json();
+    const { name, email, phone } = await request.json();
 
-    if (typeof name !== "string" || typeof email !== "string") {
+    if (typeof name !== "string" || typeof email !== "string" || typeof phone !== "string") {
       return NextResponse.json({ error: "Invalid payload." }, { status: 400 });
     }
 
     const cleanName = name.trim();
     const cleanEmail = email.trim().toLowerCase();
+    const cleanPhone = phone.trim();
 
-    if (!cleanName || !cleanEmail || !emailRegex.test(cleanEmail)) {
-      return NextResponse.json({ error: "Enter a valid name and email." }, { status: 400 });
+    if (!cleanName || !cleanEmail || !cleanPhone || !emailRegex.test(cleanEmail)) {
+      return NextResponse.json({ error: "Enter valid details in all fields." }, { status: 400 });
     }
 
     const { error } = await supabaseAdmin.from("users").insert({
       name: cleanName,
-      email: cleanEmail
+      email: cleanEmail,
+      phone: cleanPhone
     });
 
     if (error) {
