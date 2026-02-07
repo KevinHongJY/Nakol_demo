@@ -53,8 +53,7 @@ body {
   margin-bottom: 20px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(255, 250, 243, 0.92);
-  backdrop-filter: blur(3px);
+  background: #fffaf4;
 }
 
 .brand-lockup {
