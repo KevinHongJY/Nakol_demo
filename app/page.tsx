@@ -35,7 +35,12 @@ export default function Home() {
         body: JSON.stringify({ name, email })
       });
 
-      const payload = await response.json();
+      let payload: { error?: string } = {};
+      const contentType = response.headers.get("content-type") ?? "";
+      if (contentType.includes("application/json")) {
+        payload = await response.json();
+      }
+
       if (!response.ok) {
         setState({
           type: "error",
