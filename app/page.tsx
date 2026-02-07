@@ -80,6 +80,9 @@ export default function Home() {
 
   return (
     <main className="page">
+      <div className="ambient ambient-a" aria-hidden />
+      <div className="ambient ambient-b" aria-hidden />
+
       <header className="topbar">
         <div className="brand-lockup">
           <Image src="/nakol-mark.svg" alt="Nakol icon" width={34} height={34} priority />
@@ -88,49 +91,62 @@ export default function Home() {
         <span className="top-badge">Coming Soon</span>
       </header>
 
-      <section className="hero">
-        <p className="eyebrow">Nakol</p>
-        <p className="coming">Coming Soon</p>
-        <h1>Find food that fits you</h1>
-        <p className="subtitle">
-          Discover restaurants and dishes that align with your dietary needs. Halal, kosher,
-          allergen-free-eat safely, eat confidently.
-        </p>
+      <section className="hero panel">
+        <div className="hero-copy">
+          <p className="eyebrow">Nakol</p>
+          <p className="coming">Coming Soon</p>
+          <h1>Find food that fits you</h1>
+          <p className="subtitle">
+            Discover restaurants and dishes that align with your dietary needs. Halal, kosher,
+            allergen-free - eat safely, eat confidently.
+          </p>
+          <div className="hero-actions">
+            <a href="#waitlist" className="cta-primary">
+              Join Beta Waitlist
+            </a>
+            <a href="#how-it-works" className="cta-ghost">
+              How it works
+            </a>
+          </div>
+        </div>
+
+        <aside className="hero-side">
+          <p className="side-title">Built for inclusive dining</p>
+          <ul className="feature-list">
+            <li>Dietary Safety</li>
+            <li>Allergen Alerts</li>
+            <li>Restaurant Tools</li>
+          </ul>
+          <p className="side-note">
+            Everyone deserves to eat with confidence. We help diners discover safer options and
+            help restaurants communicate clearly.
+          </p>
+        </aside>
       </section>
 
-      <section className="grid">
-        <article className="card">
-          <h2>Dietary Safety</h2>
-        </article>
-        <article className="card">
-          <h2>Allergen Alerts</h2>
-        </article>
-        <article className="card">
-          <h2>Restaurant Tools</h2>
-        </article>
-      </section>
-
-      <section className="story">
+      <section className="story panel">
         <h2>Everyone deserves to eat with confidence</h2>
         <p>
           Whether it&apos;s religious requirements, allergies, or personal preferences, finding
           safe food shouldn&apos;t be stressful. Nakol connects you with restaurants that understand
-          your needs-and helps restaurants communicate theirs effortlessly.
+          your needs - and helps restaurants communicate theirs effortlessly.
         </p>
       </section>
 
-      <section className="steps">
+      <section className="steps panel" id="how-it-works">
         <h2>How it works</h2>
         <p className="steps-subtitle">Simple for diners. Simple for restaurants.</p>
         <div className="step-grid">
           <article className="step-card">
+            <span className="step-number">01</span>
             <h3>Set Your Preferences</h3>
             <p>
-              Tell us about your dietary requirements-halal, kosher, vegan, nut-free, gluten-free,
+              Tell us about your dietary requirements - halal, kosher, vegan, nut-free, gluten-free,
               and more.
             </p>
           </article>
           <article className="step-card">
+            <span className="step-number">02</span>
             <h3>Discover Restaurants</h3>
             <p>
               Browse curated options that match your needs, with clear labels and verified
@@ -138,6 +154,7 @@ export default function Home() {
             </p>
           </article>
           <article className="step-card">
+            <span className="step-number">03</span>
             <h3>Dine Confidently</h3>
             <p>
               Enjoy your meal knowing it aligns with your beliefs, health requirements, or
@@ -147,7 +164,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="signup">
+      <section className="signup panel" id="waitlist">
         <h2>Be the first to know</h2>
         <p className="signup-subtitle">
           Join our beta waitlist and help shape the future of inclusive dining.
@@ -178,11 +195,12 @@ export default function Home() {
         {state.message ? (
           <p className={state.type === "error" ? "status error" : "status success"}>{state.message}</p>
         ) : null}
-        <p className="brand-footer">
-          <Image src="/nakol-mark.svg" alt="Nakol icon" width={26} height={26} />
-          <span>Nakol</span>
-        </p>
       </section>
+
+      <footer className="brand-footer">
+        <Image src="/nakol-mark.svg" alt="Nakol icon" width={22} height={22} />
+        <span>Nakol</span>
+      </footer>
     </main>
   );
 }
