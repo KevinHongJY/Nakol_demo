@@ -27,7 +27,8 @@ export default function Home() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const fullName = String(formData.get("fullName") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
     const phone = String(formData.get("phone") ?? "").trim();
@@ -63,7 +64,7 @@ export default function Home() {
       }
 
       setState({ type: "success", message: "Saved. We will contact you soon." });
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       const message = error instanceof Error ? error.message : "Request failed.";
       setState({ type: "error", message: `${message} Please try again.` });
