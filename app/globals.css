@@ -30,6 +30,13 @@ body {
     linear-gradient(180deg, #f9f4ed 0%, #f7f1e8 45%, #f5ede2 100%);
 }
 
+/* Hard hide any legacy top bar/hero header if it appears from old HTML */
+header,
+.topbar,
+.hero-head {
+  display: none !important;
+}
+
 .page {
   position: relative;
   width: min(1120px, 92vw);
