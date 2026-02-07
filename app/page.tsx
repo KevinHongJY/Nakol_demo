@@ -80,6 +80,14 @@ export default function Home() {
 
   return (
     <main className="page">
+      <div className="topbar">
+        <div className="brand-lockup">
+          <Image src="/nakol-mark.svg" alt="Nakol icon" width={34} height={34} priority />
+          <span>Nakol</span>
+        </div>
+        <span className="top-badge">Coming Soon</span>
+      </div>
+
       <section className="hero panel">
         <div className="hero-copy">
           <p className="eyebrow">Nakol</p>
