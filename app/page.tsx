@@ -82,6 +82,7 @@ export default function Home() {
     <main className="page">
       <div className="ambient ambient-a" aria-hidden />
       <div className="ambient ambient-b" aria-hidden />
+      <div className="ambient ambient-c" aria-hidden />
 
       <header className="topbar">
         <div className="brand-lockup">
@@ -97,8 +98,8 @@ export default function Home() {
           <p className="coming">Coming Soon</p>
           <h1>Find food that fits you</h1>
           <p className="subtitle">
-            Discover restaurants and dishes that align with your dietary needs. Halal, kosher,
-            allergen-free - eat safely, eat confidently.
+            Discover restaurants and dishes that match your dietary needs. Halal, kosher,
+            allergen-safe and preference-aware.
           </p>
           <div className="hero-actions">
             <a href="#waitlist" className="cta-primary">
@@ -110,7 +111,7 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="hero-side">
+        <aside className="hero-side gradient-card">
           <p className="side-title">Built for inclusive dining</p>
           <ul className="feature-list">
             <li>Dietary Safety</li>
@@ -124,44 +125,60 @@ export default function Home() {
         </aside>
       </section>
 
+      <section className="value-strip panel">
+        <p>Clear labels</p>
+        <p>Verified details</p>
+        <p>Confident dining</p>
+      </section>
+
       <section className="story panel">
-        <h2>Everyone deserves to eat with confidence</h2>
+        <h2>Everyone deserves to eat with confidence.</h2>
         <p>
-          Whether it&apos;s religious requirements, allergies, or personal preferences, finding
-          safe food shouldn&apos;t be stressful. Nakol connects you with restaurants that understand
-          your needs - and helps restaurants communicate theirs effortlessly.
+          Religious requirements, allergies, and personal preferences should never make dining
+          stressful.
+        </p>
+        <p>
+          Nakol helps people discover places that fit, and helps restaurants communicate clearly.
         </p>
       </section>
 
       <section className="steps panel" id="how-it-works">
         <h2>How it works</h2>
         <p className="steps-subtitle">Simple for diners. Simple for restaurants.</p>
-        <div className="step-grid">
-          <article className="step-card">
+        <div className="workflow">
+          <article className="step-row">
             <span className="step-number">01</span>
-            <h3>Set Your Preferences</h3>
-            <p>
-              Tell us about your dietary requirements - halal, kosher, vegan, nut-free, gluten-free,
-              and more.
-            </p>
+            <div>
+              <h3>Set your preferences</h3>
+              <p>Share what matters: halal, kosher, vegan, nut-free, gluten-free, and more.</p>
+            </div>
           </article>
-          <article className="step-card">
+          <article className="step-row">
             <span className="step-number">02</span>
-            <h3>Discover Restaurants</h3>
-            <p>
-              Browse curated options that match your needs, with clear labels and verified
-              information.
-            </p>
+            <div>
+              <h3>Discover restaurants</h3>
+              <p>Browse places that match your needs with clear, verified safety details.</p>
+            </div>
           </article>
-          <article className="step-card">
+          <article className="step-row">
             <span className="step-number">03</span>
-            <h3>Dine Confidently</h3>
-            <p>
-              Enjoy your meal knowing it aligns with your beliefs, health requirements, or
-              preferences.
-            </p>
+            <div>
+              <h3>Dine confidently</h3>
+              <p>Order with clarity, knowing your meal aligns with your requirements.</p>
+            </div>
           </article>
         </div>
+      </section>
+
+      <section className="for-both panel">
+        <article className="for-card">
+          <h3>For diners</h3>
+          <p>Less guessing. Less stress. Better choices.</p>
+        </article>
+        <article className="for-card">
+          <h3>For restaurants</h3>
+          <p>Communicate your menu standards clearly and build trust faster.</p>
+        </article>
       </section>
 
       <section className="signup panel" id="waitlist">
@@ -195,6 +212,10 @@ export default function Home() {
         {state.message ? (
           <p className={state.type === "error" ? "status error" : "status success"}>{state.message}</p>
         ) : null}
+      </section>
+
+      <section className="closing-gradient panel">
+        <p>Inclusive dining starts with clear information.</p>
       </section>
 
       <footer className="brand-footer">
