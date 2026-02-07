@@ -64,10 +64,15 @@ export default function Home() {
       }
 
       setState({ type: "success", message: "Saved. We will contact you soon." });
-      form.reset();
-    } catch (error) {
-      const message = error instanceof Error ? error.message : "Request failed.";
-      setState({ type: "error", message: `${message} Please try again.` });
+      if (typeof form?.reset === "function") {
+        try {
+          form.reset();
+        } catch {
+          // Ignore reset failures; submit already succeeded.
+        }
+      }
+    } catch {
+      setState({ type: "error", message: "Request failed. Please try again." });
     } finally {
       setSubmitting(false);
     }
