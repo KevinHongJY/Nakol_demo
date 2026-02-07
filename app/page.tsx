@@ -8,6 +8,16 @@ type SubmitState = {
   message: string;
 };
 
+async function safeReadJson(response: Response): Promise<{ error?: string }> {
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("application/json")) return {};
+  try {
+    return (await response.json()) as { error?: string };
+  } catch {
+    return {};
+  }
+}
+
 export default function Home() {
   const [state, setState] = useState<SubmitState>({
     type: "idle",
@@ -37,24 +47,26 @@ export default function Home() {
         body: JSON.stringify({ name: fullName, email, phone })
       });
 
-      let payload: { error?: string } = {};
-      const contentType = response.headers.get("content-type") ?? "";
-      if (contentType.includes("application/json")) {
-        payload = await response.json();
-      }
+      const payload = await safeReadJson(response);
 
       if (!response.ok) {
+        const fallbackByStatus: Record<number, string> = {
+          400: "Please check your input fields.",
+          409: "This email is already registered.",
+          500: "Server error. Please try again in a moment."
+        };
         setState({
           type: "error",
-          message: payload?.error ?? "Could not save your details. Try again."
+          message: payload?.error ?? fallbackByStatus[response.status] ?? "Could not save your details. Try again."
         });
         return;
       }
 
       setState({ type: "success", message: "Saved. We will contact you soon." });
       event.currentTarget.reset();
-    } catch {
-      setState({ type: "error", message: "Network error. Please try again." });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Request failed.";
+      setState({ type: "error", message: `${message} Please try again.` });
     } finally {
       setSubmitting(false);
     }
