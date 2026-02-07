@@ -37,20 +37,6 @@ body {
   padding: 26px 0 120px;
 }
 
-.topbar {
-  position: static !important;
-  top: auto !important;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 6px 14px;
-  margin-bottom: 20px;
-  border: 0;
-  border-bottom: 0;
-  border-radius: 0;
-  background: transparent;
-}
-
 .brand-lockup {
   display: inline-flex;
   align-items: center;
@@ -81,6 +67,16 @@ body {
   gap: 30px;
   padding: 48px 42px;
   margin-bottom: 16px;
+}
+
+.hero-head {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
 }
 
 .eyebrow {

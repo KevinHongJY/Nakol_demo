@@ -80,15 +80,15 @@ export default function Home() {
 
   return (
     <main className="page">
-      <header className="topbar">
-        <div className="brand-lockup">
-          <Image src="/nakol-mark.svg" alt="Nakol icon" width={34} height={34} priority />
-          <span>Nakol</span>
-        </div>
-        <span className="top-badge">Coming Soon</span>
-      </header>
-
       <section className="hero panel">
+        <div className="hero-head">
+          <div className="brand-lockup">
+            <Image src="/nakol-mark.svg" alt="Nakol icon" width={34} height={34} priority />
+            <span>Nakol</span>
+          </div>
+          <span className="top-badge">Coming Soon</span>
+        </div>
+
         <div className="hero-copy">
           <p className="eyebrow">Nakol</p>
           <p className="coming">Coming Soon</p>
