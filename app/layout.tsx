@@ -15,7 +15,12 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Nakol Style Site",
-  description: "Vercel + Supabase ready landing page"
+  description: "Vercel + Supabase ready landing page",
+  icons: {
+    icon: "/nakol-mark.svg",
+    shortcut: "/nakol-mark.svg",
+    apple: "/nakol-mark.svg"
+  }
 };
 
 export default function RootLayout({

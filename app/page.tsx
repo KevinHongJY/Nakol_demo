@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FormEvent, useState } from "react";
 
 type SubmitState = {
@@ -62,6 +63,9 @@ export default function Home() {
   return (
     <main className="page">
       <section className="hero">
+        <div className="brand-head">
+          <Image src="/nakol-mark.svg" alt="Nakol icon" width={58} height={58} priority />
+        </div>
         <p className="eyebrow">Nakol</p>
         <p className="coming">Coming Soon</p>
         <h1>Find food that fits you</h1>
@@ -151,7 +155,10 @@ export default function Home() {
         {state.message ? (
           <p className={state.type === "error" ? "status error" : "status success"}>{state.message}</p>
         ) : null}
-        <p className="brand-footer">Nakol</p>
+        <p className="brand-footer">
+          <Image src="/nakol-mark.svg" alt="Nakol icon" width={26} height={26} />
+          <span>Nakol</span>
+        </p>
       </section>
     </main>
   );

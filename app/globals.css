@@ -39,6 +39,12 @@ body {
   animation: rise 600ms ease-out;
 }
 
+.brand-head {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
 .eyebrow {
   font-family: var(--font-mono), monospace;
   text-transform: uppercase;
@@ -228,6 +234,9 @@ button:disabled {
   margin: 16px 0 0;
   font-size: 1.2rem;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 @keyframes rise {
