@@ -178,7 +178,7 @@ export default function Home() {
         </nav>
 
         <a className="top-cta" href="#waitlist">
-          Join waitlist <span aria-hidden>-></span>
+          Join waitlist <span aria-hidden>&rarr;</span>
         </a>
       </header>
 
@@ -313,7 +313,9 @@ export default function Home() {
           <article className="restaurant-card highlight">
             <h3>Answer fewer repetitive questions</h3>
             <p>When you confirm once, diners see it immediately.</p>
-            <p className="example">Example: "Does this contain sesame?" -> badge shown on the dish.</p>
+            <p className="example">
+              Example: &ldquo;Does this contain sesame?&rdquo; then badge shown on the dish.
+            </p>
           </article>
         </div>
       </section>
