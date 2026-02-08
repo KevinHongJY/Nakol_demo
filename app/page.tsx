@@ -379,15 +379,49 @@ export default function Home() {
           Want to collaborate, pilot with your restaurant, or share product feedback? Reach us
           directly.
         </p>
-        <div className="contact-links">
-          <a href="mailto:h1595386348@163.com">Email: h1595386348@163.com</a>
-          <a href="mailto:h1595386348@163.com?subject=Restaurant%20Partnership">Restaurant partnership</a>
-          <a href="mailto:h1595386348@163.com?subject=City%20Launch%20Request">
-            City launch request
-          </a>
-          <a href="https://github.com/KevinHongJY/Nakol_demo" target="_blank" rel="noreferrer">
-            GitHub project
-          </a>
+        <div className="contact-grid">
+          <article className="contact-card">
+            <h3>General email</h3>
+            <p>Product feedback, beta access questions, and user support.</p>
+            <a className="contact-action" href="mailto:h1595386348@163.com">
+              h1595386348@163.com
+            </a>
+          </article>
+
+          <article className="contact-card">
+            <h3>Restaurant partnership</h3>
+            <p>Pilot with Nakol and publish dish-level dietary details for diners.</p>
+            <a
+              className="contact-action"
+              href="mailto:h1595386348@163.com?subject=Restaurant%20Partnership"
+            >
+              Send partnership email
+            </a>
+          </article>
+
+          <article className="contact-card">
+            <h3>City launch request</h3>
+            <p>Tell us which city should be prioritized for the next rollout.</p>
+            <a
+              className="contact-action"
+              href="mailto:h1595386348@163.com?subject=City%20Launch%20Request"
+            >
+              Request city launch
+            </a>
+          </article>
+
+          <article className="contact-card">
+            <h3>Project updates</h3>
+            <p>Follow code updates and roadmap progress on the repository.</p>
+            <a
+              className="contact-action"
+              href="https://github.com/KevinHongJY/Nakol_demo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open GitHub project
+            </a>
+          </article>
         </div>
       </section>
 
