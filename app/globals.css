@@ -314,6 +314,25 @@ body {
   letter-spacing: -0.01em;
 }
 
+.section-title-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.build-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d9c7b2;
+  border-radius: 999px;
+  background: #fffaf3;
+  color: #665949;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+}
+
 .section-copy {
   margin: 12px 0 0;
   color: var(--muted);
