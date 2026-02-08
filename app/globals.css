@@ -299,6 +299,7 @@ body {
 .steps,
 .restaurants,
 .signup,
+.contact,
 .faq {
   padding: 32px;
   margin-bottom: 16px;
@@ -308,6 +309,7 @@ body {
 .steps h2,
 .restaurants h2,
 .signup h2,
+.contact h2,
 .faq h2 {
   margin: 0;
   font-size: clamp(1.8rem, 3.2vw, 2.3rem);
@@ -704,6 +706,7 @@ button:disabled {
   .steps,
   .restaurants,
   .signup,
+  .contact,
   .faq,
   .constraints {
     padding: 22px;
