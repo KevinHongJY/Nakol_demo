@@ -529,6 +529,7 @@ button:disabled {
 .contact-links {
   margin-top: 18px;
   display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
   gap: 10px;
 }
 
@@ -540,7 +541,7 @@ button:disabled {
   border-radius: 12px;
   padding: 10px 12px;
   font-weight: 600;
-  width: fit-content;
+  width: 100%;
 }
 
 .contact-links a:hover {
@@ -672,6 +673,10 @@ button:disabled {
 
   .feature-grid,
   .form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links {
     grid-template-columns: 1fr;
   }
 

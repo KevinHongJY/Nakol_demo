@@ -380,8 +380,11 @@ export default function Home() {
           directly.
         </p>
         <div className="contact-links">
-          <a href="mailto:hello@nakol.app">Email: hello@nakol.app</a>
-          <a href="mailto:hello@nakol.app?subject=Restaurant%20Partnership">Restaurant partnership</a>
+          <a href="mailto:h1595386348@163.com">Email: h1595386348@163.com</a>
+          <a href="mailto:h1595386348@163.com?subject=Restaurant%20Partnership">Restaurant partnership</a>
+          <a href="mailto:h1595386348@163.com?subject=City%20Launch%20Request">
+            City launch request
+          </a>
           <a href="https://github.com/KevinHongJY/Nakol_demo" target="_blank" rel="noreferrer">
             GitHub project
           </a>
