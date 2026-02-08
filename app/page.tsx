@@ -374,9 +374,7 @@ export default function Home() {
       </section>
 
       <section className="contact panel-soft" id="contact">
-        <h2 className="section-title-inline">
-          Contact <span className="build-tag">v3</span>
-        </h2>
+        <h2>Contact</h2>
         <p className="section-copy">
           Want to collaborate, pilot with your restaurant, or share product feedback? Reach us
           directly.
