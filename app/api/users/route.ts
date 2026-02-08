@@ -28,44 +28,59 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Enter valid details in all fields." }, { status: 400 });
     }
 
-    const insertPayload: {
-      name: string;
-      email: string;
-      phone: string;
-      city?: string;
-      dietary_needs?: string;
-    } = {
-      name: cleanName,
-      email: cleanEmail,
-      phone: cleanPhone
-    };
+    const insertAttempts: Array<Record<string, string>> = [
+      {
+        name: cleanName,
+        email: cleanEmail,
+        phone: cleanPhone,
+        city: cleanCity,
+        dietary_needs: cleanDietaryNeeds
+      },
+      {
+        name: cleanName,
+        email: cleanEmail,
+        phone: cleanPhone,
+        city: cleanCity
+      },
+      {
+        name: cleanName,
+        email: cleanEmail,
+        phone: cleanPhone
+      },
+      {
+        name: cleanName,
+        email: cleanEmail
+      }
+    ];
 
-    if (cleanCity) insertPayload.city = cleanCity;
-    if (cleanDietaryNeeds) insertPayload.dietary_needs = cleanDietaryNeeds;
+    let lastErrorCode: string | undefined;
+    for (const payload of insertAttempts) {
+      const { error } = await supabaseAdmin.from("users").insert(payload);
+      if (!error) return NextResponse.json({ ok: true });
 
-    const { error } = await supabaseAdmin.from("users").insert(insertPayload);
-
-    if (error) {
-      // Map common unique index failure to a user-friendly response.
       if (error.code === "23505") {
         return NextResponse.json({ error: "This email is already registered." }, { status: 409 });
       }
-      // If optional columns were not migrated yet, still store required waitlist details.
-      if (error.code === "42703") {
-        const { error: fallbackError } = await supabaseAdmin.from("users").insert({
-          name: cleanName,
-          email: cleanEmail,
-          phone: cleanPhone
-        });
-        if (!fallbackError) return NextResponse.json({ ok: true });
-        if (fallbackError.code === "23505") {
-          return NextResponse.json({ error: "This email is already registered." }, { status: 409 });
-        }
+
+      if (error.code === "42501") {
+        return NextResponse.json(
+          { error: "Permission error. Check SUPABASE_SERVICE_ROLE_KEY in Vercel Production." },
+          { status: 500 }
+        );
       }
-      return NextResponse.json({ error: "Database error." }, { status: 500 });
+
+      lastErrorCode = error.code;
+      if (error.code !== "42703") break;
     }
 
-    return NextResponse.json({ ok: true });
+    if (lastErrorCode === "42703") {
+      return NextResponse.json(
+        { error: "Database schema is outdated. Re-run latest supabase/schema.sql." },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ error: "Database error." }, { status: 500 });
   } catch {
     return NextResponse.json({ error: "Request failed." }, { status: 500 });
   }
