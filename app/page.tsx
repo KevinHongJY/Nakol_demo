@@ -410,18 +410,6 @@ export default function Home() {
             </a>
           </article>
 
-          <article className="contact-card">
-            <h3>Project updates</h3>
-            <p>Follow code updates and roadmap progress on the repository.</p>
-            <a
-              className="contact-action"
-              href="https://github.com/KevinHongJY/Nakol_demo"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open GitHub project
-            </a>
-          </article>
         </div>
       </section>
 
