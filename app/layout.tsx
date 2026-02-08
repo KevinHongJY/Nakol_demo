@@ -9,7 +9,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Nakol Style Site",
+  title: "Nakol",
   description: "Vercel + Supabase ready landing page",
   icons: {
     icon: "/nakol-mark.svg",
