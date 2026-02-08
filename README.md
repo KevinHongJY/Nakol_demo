@@ -19,6 +19,8 @@ In Supabase SQL Editor, run:
 
 `/Users/hongjiayang/Documents/New project/supabase/schema.sql`
 
+If your `users` table already exists, run it again to add any newly introduced columns (for example `city` and `dietary_needs`).
+
 ## 3) Environment variables
 
 Set these in `.env.local` and in Vercel Project Settings:
@@ -52,7 +54,9 @@ Request body:
 {
   "name": "Jane Doe",
   "email": "jane@example.com",
-  "phone": "+1 (555) 000-0000"
+  "phone": "+1 (555) 000-0000",
+  "city": "San Francisco",
+  "dietaryNeeds": "halal, no sesame"
 }
 ```
 

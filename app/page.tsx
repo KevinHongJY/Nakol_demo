@@ -91,7 +91,7 @@ const faqItems = [
   },
   {
     q: "When will it launch?",
-    a: "We are rolling out city by city. Join the waitlist and we will notify you when your city is ready."
+    a: "We are rolling out city by city. Share your city and dietary needs in the waitlist and we will notify you when your area opens."
   }
 ];
 
@@ -119,8 +119,10 @@ export default function Home() {
     const fullName = String(formData.get("fullName") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
     const phone = String(formData.get("phone") ?? "").trim();
+    const city = String(formData.get("city") ?? "").trim();
+    const dietaryNeeds = String(formData.get("dietaryNeeds") ?? "").trim();
 
-    if (!fullName || !email || !phone) {
+    if (!fullName || !email || !phone || !city) {
       setState({ type: "error", message: "Please complete all fields." });
       return;
     }
@@ -132,7 +134,7 @@ export default function Home() {
       const response = await fetch("/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: fullName, email, phone })
+        body: JSON.stringify({ name: fullName, email, phone, city, dietaryNeeds })
       });
 
       const payload = await safeReadJson(response);
@@ -178,6 +180,7 @@ export default function Home() {
           <a href="#features">Features</a>
           <a href="#how-it-works">How it works</a>
           <a href="#restaurants">For restaurants</a>
+          <a href="#contact">Contact</a>
           <a href="#faq">FAQ</a>
         </nav>
 
@@ -343,6 +346,18 @@ export default function Home() {
             <span>Phone Number</span>
             <input type="tel" name="phone" placeholder="+1 (555) 000-0000" autoComplete="tel" required />
           </label>
+          <label>
+            <span>City</span>
+            <input type="text" name="city" placeholder="New York" autoComplete="address-level2" required />
+          </label>
+          <label className="field-full">
+            <span>Dietary Needs</span>
+            <textarea
+              name="dietaryNeeds"
+              placeholder="Example: halal, sesame allergy, no shellfish"
+              rows={3}
+            />
+          </label>
           <button type="submit" disabled={submitting}>
             {submitting ? "Joining..." : "Join waitlist"}
           </button>
@@ -356,6 +371,21 @@ export default function Home() {
         {state.message ? (
           <p className={state.type === "error" ? "status error" : "status success"}>{state.message}</p>
         ) : null}
+      </section>
+
+      <section className="contact panel-soft" id="contact">
+        <h2>Contact</h2>
+        <p className="section-copy">
+          Want to collaborate, pilot with your restaurant, or share product feedback? Reach us
+          directly.
+        </p>
+        <div className="contact-links">
+          <a href="mailto:hello@nakol.app">Email: hello@nakol.app</a>
+          <a href="mailto:hello@nakol.app?subject=Restaurant%20Partnership">Restaurant partnership</a>
+          <a href="https://github.com/KevinHongJY/Nakol_demo" target="_blank" rel="noreferrer">
+            GitHub project
+          </a>
+        </div>
       </section>
 
       <section className="faq panel" id="faq">

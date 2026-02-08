@@ -462,7 +462,7 @@ label {
   gap: 7px;
 }
 
-.form label:nth-of-type(3),
+.field-full,
 .form button {
   grid-column: 1 / -1;
 }
@@ -474,19 +474,27 @@ label span {
 }
 
 input,
+textarea,
 button {
   font: inherit;
   border-radius: 12px;
 }
 
-input {
+input,
+textarea {
   border: 1px solid #d8c8b7;
   background: #fffdf9;
   padding: 12px 14px;
   color: var(--ink);
 }
 
-input:focus {
+textarea {
+  resize: vertical;
+  min-height: 108px;
+}
+
+input:focus,
+textarea:focus {
   outline: none;
   border-color: #ccac89;
   box-shadow: 0 0 0 3px rgba(215, 180, 140, 0.22);
@@ -516,6 +524,27 @@ button:disabled {
   color: #43372c;
   text-decoration: none;
   font-weight: 600;
+}
+
+.contact-links {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: #403429;
+  border: 1px solid var(--line-soft);
+  background: var(--panel-2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.contact-links a:hover {
+  border-color: #d4bea4;
 }
 
 .status {
@@ -646,7 +675,7 @@ button:disabled {
     grid-template-columns: 1fr;
   }
 
-  .form label:nth-of-type(3),
+  .field-full,
   .form button {
     grid-column: auto;
   }
