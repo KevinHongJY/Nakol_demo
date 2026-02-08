@@ -69,6 +69,10 @@ const featureCards = [
   {
     title: "Ask and resolve",
     body: "When something is unknown, message restaurants or community to resolve it."
+  },
+  {
+    title: "City launch readiness",
+    body: "Track demand by city and constraints so launch priority follows real user pull."
   }
 ];
 
